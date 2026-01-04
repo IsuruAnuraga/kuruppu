@@ -46,4 +46,4 @@ jobs:
           app-name: 'level2-kuruppu-webapp'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AB792348CA2D40F983D0731635CB1CDE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E45FD669C8BA463AACB0AE71370205D2 }}
