@@ -23,11 +23,6 @@ jobs:
         with:
           node-version: '22.x'
 
-      - name: npm install, build
-        run: |
-          npm install
-          npm run build
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -51,4 +46,4 @@ jobs:
           app-name: 'level2-kuruppu-webapp'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E45FD669C8BA463AACB0AE71370205D2 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2083FF58F85D4E70A0B3CE1C27B14A09 }}
