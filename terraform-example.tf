@@ -13,7 +13,8 @@ resource "azurerm_linux_web_app" "portfolio" {
     }
     
     # Important: Set the startup command
-    app_command_line = "npm start"
+    # Use startup.sh which builds if needed and starts the server
+    app_command_line = "bash startup.sh"
     
     # Health check configuration
     health_check_path = "/health.json"
@@ -22,9 +23,12 @@ resource "azurerm_linux_web_app" "portfolio" {
   app_settings = {
     # Azure sets PORT automatically, no need to set it here
     
-    # Disable build during deployment since we build in GitHub Actions/CI
-    # Set to "true" if you want Azure to build during deployment
-    SCM_DO_BUILD_DURING_DEPLOYMENT = "false"
+    # Enable build during deployment (recommended for static sites)
+    # Azure will run "npm install" and "npm run build" during deployment
+    SCM_DO_BUILD_DURING_DEPLOYMENT = "true"
+    
+    # Increase container startup time limit (optional, max 1800 seconds)
+    # WEBSITES_CONTAINER_START_TIME_LIMIT = "600"
     
     # Enable logging
     WEBSITE_ENABLE_SYNC_UPDATE_SITE = "true"
