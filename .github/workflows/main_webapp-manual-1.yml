@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '24.x'
+          node-version: '22.x'
 
       - name: npm install, build, and test
         run: |
@@ -52,4 +52,4 @@ jobs:
           app-name: 'WebApp-Manual-1'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EA74F00ADE6640EE87D08E7A48714819 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_03F8A02ED6094B13AF4C581E79DB1733 }}
