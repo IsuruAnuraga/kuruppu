@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "start": "node server.js",
-    "start:azure": "serve -s dist -l $PORT",
+    "start:azure": "node server.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

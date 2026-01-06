@@ -1,73 +1,128 @@
-# React + TypeScript + Vite
+# Portfolio Website - DevOps Engineer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Vite, showcasing DevOps and Cloud Engineering expertise.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Modern, responsive design
+- Smooth scrolling navigation
+- Sections: Home, About, Skills, Experience, Projects, Contact
+- Social media integration
+- Optimized for performance
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend:** React 19, TypeScript
+- **Build Tool:** Vite (rolldown)
+- **Styling:** CSS3
+- **Deployment:** Azure Web App
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Install dependencies
+npm install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Start development server
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# Build for production
+npm run build
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview production build
+npm run preview
+
+# Start production server
+npm start
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Run linter
+npm run lint
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build project
+npm run build
 ```
+
+## 📝 GitHub Repository Setup
+
+The repository is configured as **Kuruppu**. To set up the GitHub repository:
+
+1. **Create a new repository on GitHub:**
+   - Go to https://github.com/new
+   - Repository name: `Kuruppu`
+   - Choose public or private
+   - Don't initialize with README (we already have one)
+
+2. **Connect local repository to GitHub:**
+   ```bash
+   git remote add origin https://github.com/IsuruAnuraga/Kuruppu.git
+   git branch -M main
+   git push -u origin main
+   ```
+
+3. **Verify connection:**
+   ```bash
+   git remote -v
+   ```
+
+## ☁️ Azure Web App Deployment
+
+This project is configured for deployment to Azure Web App. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+### Quick Deploy Steps:
+
+1. **Create Azure Web App** (via Azure Portal or CLI)
+2. **Configure GitHub Actions:**
+   - Add `AZURE_WEBAPP_PUBLISH_PROFILE` secret to GitHub
+   - Update `AZURE_WEBAPP_NAME` in `.github/workflows/azure-deploy.yml`
+3. **Push to main branch** - automatic deployment will trigger
+
+### Manual Deployment:
+
+```bash
+# Build the project
+npm run build
+
+# Deploy using Azure CLI
+az webapp deploy --resource-group <resource-group> --name <app-name> --src-path ./dist
+```
+
+## 📁 Project Structure
+
+```
+my-portfoio/
+├── src/
+│   ├── App.tsx          # Main application component
+│   ├── App.css          # Application styles
+│   ├── main.tsx         # Application entry point
+│   └── index.css        # Global styles
+├── public/              # Static assets
+├── dist/               # Build output (generated)
+├── .github/
+│   └── workflows/      # GitHub Actions workflows
+├── server.js           # Production server
+├── vite.config.ts      # Vite configuration
+└── package.json        # Dependencies and scripts
+```
+
+## 🔗 Links
+
+- **GitHub Repository:** [Kuruppu](https://github.com/IsuruAnuraga/Kuruppu)
+- **Live Site:** (Update with your Azure Web App URL)
+
+## 📄 License
+
+This project is private and proprietary.
+
+## 👤 Author
+
+**Isuru Anuraga Kuruppu**
+- GitHub: [@IsuruAnuraga](https://github.com/IsuruAnuraga)
+- LinkedIn: [Isuru Anuraga Sri Kuruppu](https://www.linkedin.com/in/isuru-anuraga-sri-kuruppu/)
+
+---
+
+Built with ❤️ using React, TypeScript, and Vite
